@@ -298,10 +298,6 @@ a:hover { opacity: .9; }
   transition: filter 0.3s ease;
 }
 
-.footer-icons img[alt="ORCID"] {
-  max-height: 42px;
-}
-
 
 /* In dark mode → make icons white */
 body.dark .footer-icons img {
