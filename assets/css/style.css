@@ -264,8 +264,8 @@ a:hover { opacity: .9; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 22px;                 /* uniform spacing */
-  padding: 22px 0;
+  gap: 32px;                 /* uniform spacing */
+  padding: 28px 0;
   flex-wrap: wrap;
 }
 
@@ -275,6 +275,8 @@ a:hover { opacity: .9; }
   justify-content: center;
   width: 42px;       /* ensures a uniform clickable box */
   height: 42px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   background: none;
 }
 
@@ -286,10 +288,12 @@ a:hover { opacity: .9; }
 
 /* Icons */
 .footer-icons img {
-  height: 42px;              /* same visual height */
+  max-height: 42px;              /* same visual height */
   width: auto;               /* preserves aspect ratio */
   object-fit: contain;
   display: block;
+  vertical-align: middle;
+  margin: auto;
   filter: invert(0%) brightness(100%);  /* black icons for light mode */
   transition: filter 0.3s ease;
 }
