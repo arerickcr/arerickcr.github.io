@@ -247,6 +247,60 @@ p {
   .pubs-title h2 { text-align: left; margin-bottom: 6px; }
 }
 
+/* ===== Notes page ===== */
+.notes h2 {
+  font-size: 1.8rem;
+  margin: 0 0 18px 0;
+  letter-spacing: 0.07em;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr;   /* similar balance to screenshot */
+  gap: 40px 60px;                            /* row / column gaps */
+  margin-top: 10px;
+}
+
+.notes-col h3 {
+  margin: 8px 0 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.notes-col ul {
+  list-style: disc;
+  padding-left: 20px;                        /* indent bullets nicely */
+  margin: 0;
+}
+
+.notes-col li {
+  margin: 14px 0;
+  line-height: 1.7;
+}
+
+.notes-col a {
+  text-decoration: underline;                /* underline like your example */
+  text-underline-offset: 3px;
+  color: var(--accent);
+}
+
+/* Centered italic blurb */
+.notes-blurb {
+  text-align: center;
+  margin: 36px auto 8px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 1000px) {
+  .notes-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .notes-grid { grid-template-columns: 1fr; }
+}
+
 
 /* ====== Accordion ====== */
 .edu-row { margin: 10px 0 8px 0; }
