@@ -259,32 +259,46 @@ p {
 a { color: var(--accent); }
 a:hover { opacity: .9; }
 
-/* ====== Footer Contact Icons ====== */
+/* ====== Footer Contact Icons (Clean Floating Style) ====== */
 .footer-icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 22px;
-  padding: 22px 0;
+  gap: 28px;                 /* uniform spacing */
+  padding: 26px 0;
   flex-wrap: wrap;
 }
 
-.footer-icons img {
-  height: 42px;                  /* ensures equal height */
-  width: auto;                   /* preserves aspect ratio */
-  object-fit: contain;
-  border-radius: 4px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  background: var(--text);
-  padding: 6px;
-  display: block;
+.footer-icons a {
+  width: 42px;               /* equal clickable area for all icons */
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.3s ease;
 }
 
-
-.footer-icons a:hover img {
+.footer-icons a:hover {
   transform: translateY(-3px);
-  opacity: 0.85;
+  opacity: 0.8;
 }
+
+/* Icons */
+.footer-icons img {
+  height: 28px;              /* same visual height */
+  width: auto;               /* preserves aspect ratio */
+  object-fit: contain;
+  display: block;
+  filter: invert(0%) brightness(0%);  /* black icons for light mode */
+  transition: filter 0.3s ease;
+}
+
+/* In dark mode → make icons white */
+body.dark .footer-icons img {
+  filter: invert(100%) brightness(100%);
+}
+
 
 
 /* ====== Responsive ====== */
