@@ -386,25 +386,45 @@ p {
 .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 /* icons */
-.theme-toggle .icon {
-  width: 24px;
-  height: 24px;
-  fill: var(--text);
-  stroke: var(--text);
-  transition: transform .25s ease, opacity .2s ease, fill .2s ease, stroke .2s ease;
+/* ===== Round theme toggle with image icons ===== */
+.theme-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  background-color: var(--bg);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, opacity 0.2s ease;
+  overflow: hidden;
 }
 
-/* default (light mode): show sun, hide moon */
-.theme-toggle .sun { opacity: 1; transform: scale(1); }
-.theme-toggle .moon { opacity: 0; transform: scale(.8); position: absolute; }
+.theme-toggle:hover { transform: translateY(-2px); opacity: 0.9; }
 
-/* dark mode: show moon, hide sun */
-body.dark .theme-toggle { border-color: var(--text); }
-body.dark .theme-toggle .sun { opacity: 0; transform: scale(.8); position: absolute; }
+.theme-toggle img.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Light mode – show sun */
+.theme-toggle .sun { opacity: 1; transform: scale(1); }
+.theme-toggle .moon { opacity: 0; transform: scale(0.7); position: absolute; }
+
+/* Dark mode – show moon */
+body.dark .theme-toggle .sun { opacity: 0; transform: scale(0.7); position: absolute; }
 body.dark .theme-toggle .moon { opacity: 1; transform: scale(1); }
 
-/* optional subtle inner background for contrast on very dark/light pages */
-body.dark .theme-toggle { background-color: rgba(255,255,255,0.02); }
+/* Optional tiny tint background in dark mode */
+body.dark .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.05);
+}
 
 
 /* ====== Links ====== */
