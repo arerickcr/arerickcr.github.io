@@ -88,19 +88,35 @@ body {
 }
 .site-nav a:hover { border-bottom: 1px solid var(--text); }
 
-/* ====== Hero Section ====== */
+/* ====== Hero Section (Text Aligned, Photo Spaced) ====== */
 .hero {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-  padding: 36px 0 10px 0;
+  align-items: flex-start;
+  gap: 48px;                 /* more space between text and photo */
+  padding: 40px 0 20px 0;
 }
+
+.hero-text {
+  text-align: justify;       /* makes the paragraph edges aligned */
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.hero-photo {
+  margin-top: 10px;
+  text-align: center;        /* keeps image centered on small screens */
+}
+
 .hero-photo img {
   width: 100%;
+  max-width: 360px;          /* limit width for elegance */
   border-radius: 12px;
   border: 1px solid var(--border);
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .caption {
   color: var(--muted);
   font-size: 12px;
