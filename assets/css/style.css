@@ -280,15 +280,6 @@ a:hover { opacity: .9; }
   display: block;
 }
 
-.footer-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;       /* ensures a uniform clickable box */
-  height: 46px;
-  background: none;
-}
-
 
 .footer-icons a:hover img {
   transform: translateY(-3px);
