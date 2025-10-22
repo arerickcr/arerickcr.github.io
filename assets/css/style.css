@@ -88,6 +88,23 @@ body {
 }
 .site-nav a:hover { border-bottom: 1px solid var(--text); }
 
+/* ====== Header subtle shadow separation ====== */
+.site-header {
+  background-color: var(--bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* soft bottom shadow */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Optional: smooth fade when scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  .site-header {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+}
+
+
 /* ====== Hero Section (Text Aligned, Photo Spaced) ====== */
 .hero {
   display: grid;
