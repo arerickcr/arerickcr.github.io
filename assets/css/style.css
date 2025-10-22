@@ -454,7 +454,7 @@ body.dark .footer-icons img {
 }
 
 body.dark .theme-toggle .sun {
-  filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(255,255,255,0.6));
+  filter: brightness(100%) invert(1) drop-shadow(0 0 2px rgba(255,255,255,0.6));
 }
 
 
