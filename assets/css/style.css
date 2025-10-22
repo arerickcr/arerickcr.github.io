@@ -270,7 +270,7 @@ a:hover { opacity: .9; }
 }
 
 .footer-icons img {
-  height: 10px;                  /* ensures equal height */
+  height: 40px;                  /* ensures equal height */
   width: auto;                   /* preserves aspect ratio */
   object-fit: contain;
   border-radius: 4px;
@@ -284,8 +284,8 @@ a:hover { opacity: .9; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10px;       /* ensures a uniform clickable box */
-  height: 10px;
+  width: 40px;       /* ensures a uniform clickable box */
+  height: 40px;
   background: none;
 }
 
