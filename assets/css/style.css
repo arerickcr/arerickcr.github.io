@@ -264,20 +264,20 @@ a:hover { opacity: .9; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 28px;                 /* uniform spacing */
-  padding: 26px 0;
+  gap: 22px;                 /* uniform spacing */
+  padding: 22px 0;
   flex-wrap: wrap;
 }
 
 .footer-icons a {
-  width: 42px;               /* equal clickable area for all icons */
-  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.3s ease;
+  width: 42px;       /* ensures a uniform clickable box */
+  height: 42px;
+  background: none;
 }
+
 
 .footer-icons a:hover {
   transform: translateY(-3px);
@@ -286,11 +286,11 @@ a:hover { opacity: .9; }
 
 /* Icons */
 .footer-icons img {
-  height: 28px;              /* same visual height */
+  height: 42px;              /* same visual height */
   width: auto;               /* preserves aspect ratio */
   object-fit: contain;
   display: block;
-  filter: invert(0%) brightness(0%);  /* black icons for light mode */
+  filter: invert(0%) brightness(100%);  /* black icons for light mode */
   transition: filter 0.3s ease;
 }
 
