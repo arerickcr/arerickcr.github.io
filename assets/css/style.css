@@ -366,23 +366,46 @@ p {
 }
 .site-footer .container { padding: 20px 0; color: var(--muted); }
 
-/* ====== Theme Toggle Button ====== */
+/* ===== Fancy round theme toggle (sun ↔ moon) ===== */
 .theme-toggle {
   position: fixed;
   right: 22px;
   bottom: 22px;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  border: none;
-  background: var(--accent);
-  color: #fff;
-  font-size: 20px;
+  border: 2px solid var(--text);
+  background: transparent;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,.2);
-  transition: transform .1s ease, opacity .2s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  transition: transform .12s ease, opacity .2s ease, border-color .2s ease, background-color .2s ease;
 }
-.theme-toggle:hover { transform: translateY(-2px); opacity: .9; }
+.theme-toggle:hover { transform: translateY(-2px); opacity: .95; }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* icons */
+.theme-toggle .icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--text);
+  stroke: var(--text);
+  transition: transform .25s ease, opacity .2s ease, fill .2s ease, stroke .2s ease;
+}
+
+/* default (light mode): show sun, hide moon */
+.theme-toggle .sun { opacity: 1; transform: scale(1); }
+.theme-toggle .moon { opacity: 0; transform: scale(.8); position: absolute; }
+
+/* dark mode: show moon, hide sun */
+body.dark .theme-toggle { border-color: var(--text); }
+body.dark .theme-toggle .sun { opacity: 0; transform: scale(.8); position: absolute; }
+body.dark .theme-toggle .moon { opacity: 1; transform: scale(1); }
+
+/* optional subtle inner background for contrast on very dark/light pages */
+body.dark .theme-toggle { background-color: rgba(255,255,255,0.02); }
+
 
 /* ====== Links ====== */
 a { color: var(--accent); }
