@@ -2,25 +2,26 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Theme: load preference or system
-const body = document.body;
+const body   = document.body;
 const toggle = document.getElementById('theme-toggle');
+
 const saved = localStorage.getItem('theme');
-const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 if (saved === 'dark' || (!saved && prefersDark)) {
   body.classList.add('dark');
-  toggle.textContent = '☀️';
+  toggle.setAttribute('aria-label','Switch to light mode');
 } else {
-  toggle.textContent = '🌙';
+  toggle.setAttribute('aria-label','Switch to dark mode');
 }
 
-// Toggle handler
 toggle.addEventListener('click', () => {
   body.classList.toggle('dark');
-  const isDark = body.classList.contains('dark');
-  toggle.textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const dark = body.classList.contains('dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
 });
+
 
 // Accordions
 const accordions = document.querySelectorAll('.accordion');
