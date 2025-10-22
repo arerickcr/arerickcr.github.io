@@ -101,6 +101,7 @@ body {
   text-align: justify;       /* makes the paragraph edges aligned */
   text-justify: inter-word;
   hyphens: auto;
+  margin-right: 10px;
 }
 
 .hero-photo {
@@ -236,5 +237,15 @@ a:hover { opacity: .9; }
 
 /* ====== Responsive ====== */
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .hero-text {
+    text-align: left;    /* easier to read on mobile */
+  }
+  .hero-photo img {
+    max-width: 320px;
+  }
 }
+
