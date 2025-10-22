@@ -1,16 +1,12 @@
+/* ====== Font Import ====== */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 
-p {
-  letter-spacing: 0.03em;
-  font-variant-numeric: proportional-nums;
-}
-
-/* Color system via CSS variables */
+/* ====== Color System ====== */
 :root {
   --bg: #f2f1ed;
   --text: #111111;
   --muted: #555;
-  --accent: #2b3a55;
+  --accent: #2b3a55;  /* navy tone */
   --panel: #f7f7f7;
   --card: #ffffff;
   --border: #e4e1da;
@@ -26,12 +22,11 @@ body.dark {
   --border: #2b2b2b;
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-
-/* Global typography */
-html { font-size: 18px; }              /* base size (bigger than default) */
-@media (min-width: 900px) { html { font-size: 19px; } }  /* a touch larger on desktop */
+/* ====== Global Serif + Small-Caps Typography ====== */
+html { font-size: 18.5px; }
+@media (min-width: 900px) {
+  html { font-size: 19.5px; }
+}
 
 body,
 button, input, select, textarea,
@@ -40,38 +35,27 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.02em;
+  font-variant-caps: small-caps;
+  text-transform: none;
+  letter-spacing: 0.06em;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  line-height: 1.8;
+  line-height: 1.9;
+  margin: 0;
   transition: background .25s ease, color .25s ease;
 }
 
-/* Headings (same font, clearer hierarchy) */
-h1 { font-size: 2.1rem; letter-spacing: 0.04em; font-weight: 700; }
-h2 { font-size: 1.5rem; margin-top: 1.6rem; font-weight: 700; }
-h3 { font-size: 1.25rem; font-weight: 700; }
-
-p { margin: 0.6rem 0 0.9rem; }
-
-/* Nav uses same font */
-.site-nav a { font-weight: 700; letter-spacing: 0.04em; }
-
-/* Accordion uses same font and sizing */
-.accordion { font-size: 1.1rem; }
-.panel { font-size: 1rem; }
-
-
-/* Layout */
+/* ====== Layout ====== */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* ====== Header ====== */
 .site-header {
   border-bottom: 1px solid var(--border);
   background: var(--bg);
@@ -89,27 +73,22 @@ p { margin: 0.6rem 0 0.9rem; }
 
 .site-title {
   margin: 0;
-  font-size: 32px;
-  letter-spacing: .06em;
-  font-weight: 600;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.12em;
 }
-
-.site-title { 
-  text-transform: none; 
-  font-variant-caps: small-caps; 
-  letter-spacing: 0.06em; 
-}
-
 
 .site-nav a {
   margin-left: 18px;
   text-decoration: none;
   color: var(--text);
-  padding-bottom: 2px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 .site-nav a:hover { border-bottom: 1px solid var(--text); }
 
-/* Hero */
+/* ====== Hero Section ====== */
 .hero {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -128,7 +107,32 @@ p { margin: 0.6rem 0 0.9rem; }
   margin: 6px 0 0 0;
 }
 
-/* Accordions */
+/* ====== Headings ====== */
+h1 {
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* ====== Paragraphs ====== */
+p {
+  margin: 0.8rem 0 1rem;
+  letter-spacing: 0.05em;
+  font-size: 1.02rem;
+}
+
+/* ====== Accordion ====== */
 .edu-row { margin: 10px 0 8px 0; }
 .accordion {
   width: 100%;
@@ -137,12 +141,13 @@ p { margin: 0.6rem 0 0.9rem; }
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px 16px;
-  font-size: 18px;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   transition: background .2s ease, color .2s ease, border-color .2s ease;
+  letter-spacing: 0.05em;
 }
 .accordion:hover { background: var(--card); }
 
@@ -159,9 +164,10 @@ p { margin: 0.6rem 0 0.9rem; }
   margin: 6px 0 16px 0;
   background: var(--panel);
   border-radius: 10px;
+  font-size: 1rem;
 }
 
-/* Logo grid with image links */
+/* ====== Logo Grid ====== */
 .logo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -183,14 +189,14 @@ p { margin: 0.6rem 0 0.9rem; }
 .logo-card:hover { transform: translateY(-2px); }
 .logo-card img { width: 26px; height: 26px; object-fit: contain; }
 
-/* Footer */
+/* ====== Footer ====== */
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 24px;
 }
 .site-footer .container { padding: 20px 0; color: var(--muted); }
 
-/* Theme toggle button */
+/* ====== Theme Toggle Button ====== */
 .theme-toggle {
   position: fixed;
   right: 22px;
@@ -208,9 +214,11 @@ p { margin: 0.6rem 0 0.9rem; }
 }
 .theme-toggle:hover { transform: translateY(-2px); opacity: .9; }
 
+/* ====== Links ====== */
 a { color: var(--accent); }
 a:hover { opacity: .9; }
 
+/* ====== Responsive ====== */
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
 }
