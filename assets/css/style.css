@@ -354,7 +354,7 @@ p {
   border-radius: 0;
   padding: 22px 8px;
   display: grid;
-  grid-template-columns: 1fr 1.2fr auto;  /* title | meta | right */
+  grid-template-columns: 2fr 1.5fr auto;  /* title | meta | right */
   align-items: center;
   gap: 14px;
   cursor: pointer;
@@ -366,6 +366,15 @@ p {
   font-size: 1.6rem;         /* big line like your screenshot */
   font-weight: 700;
 }
+
+.cv-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: left;          /* ⬅ ensures single-line left alignment */
+  white-space: normal;       /* prevents weird wrapping */
+  display: block;            /* keep it block-level */
+}
+
 
 .cv-meta {
   color: var(--muted);
@@ -398,8 +407,17 @@ p {
   background: var(--panel);
   border-bottom: 1px solid var(--border);
 }
-.cv-bullets { margin: 0; padding-left: 18px; }
-.cv-bullets li { margin: 8px 0; line-height: 1.7; }
+.cv-bullets {
+  list-style: none;           /* ⬅ removes dots */
+  margin: 0;
+  padding: 0;
+}
+.cv-bullets li {
+  margin: 6px 0;
+  line-height: 1.7;
+  text-align: justify;        /* optional: aligns lines neatly */
+  text-justify: inter-word;
+}
 
 .cv-download {
   text-align: center;
