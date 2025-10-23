@@ -848,4 +848,15 @@ body.dark .theme-toggle .moon {
   .cv-section { grid-template-columns: 1fr; gap: 22px; }
 }
 
+/* ===== Smaller left section title (Professional Experience) ===== */
+.cv-left h2 {
+  font-size: 2.1rem;        /* smaller, elegant size */
+  letter-spacing: 0.06em;   /* keep the small-caps spacing */
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+
 
