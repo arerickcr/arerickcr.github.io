@@ -733,66 +733,56 @@ body.dark .theme-toggle .moon {
   gap: 64px;                 /* more space between left title and content */
 }
 
-/* right column spacing (scope only the page column, not the icon span) */
-.cv-section .cv-right{
+/* ===== Right alignment fix for Professional Experience ===== */
+
+/* Make the right column expand fully and align items to the right edge */
+.cv-section .cv-right {
   display: flex;
   flex-direction: column;
-  row-gap: 14px;             /* space between rows */
+  align-items: flex-end;   /* ⬅ ensures all accordions align right */
+  width: 100%;
 }
 
-/* accordion row: full width, left aligned, roomy */
-.cv-accordion{
-  width: 100%;
-  padding: 22px 0;           /* more vertical room */
+/* Accordion should itself fill the available width, right-aligned */
+.cv-accordion {
+  width: 90%;              /* ⬅ controls how far from right edge */
+  max-width: 1000px;       /* prevent it from being too wide on big screens */
+  text-align: left;
+  padding: 20px 0;
   border-top: 1px solid var(--border);
   background: transparent;
-  display: grid;
-  grid-template-columns: 1fr auto;  /* title | chevron */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  text-align: left;          /* ensure no centering */
 }
 
-/* institution name – align with panel box */
-.cv-title{
+/* Institution titles */
+.cv-title {
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: .05em;
-  padding-left: 8px;         /* matches the panel’s inner radius/edge */
+  letter-spacing: 0.05em;
 }
 
-/* chevron on the far right (scope to button, not the page column) */
-.cv-accordion .cv-right{
-  justify-self: end;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* panel box: more padding + same left edge as title */
-.cv-panel{
-  margin: 6px 0 22px 0;
-  padding: 16px 20px;        /* roomier box */
+/* Panels now align perfectly with titles */
+.cv-panel {
+  width: 90%;
+  max-width: 1000px;
+  margin: 6px 0 26px 0;
+  padding: 18px 22px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 10px;
-  text-align: left;
   line-height: 1.75;
+  text-align: left;
 }
 
-/* paragraphs inside panel */
-.cv-panel p{ margin: .6rem 0; }
-.cv-panel p.location{ margin-top: 1.2rem; }
-.cv-panel p.dates{ margin-top: .4rem; }
-
-/* bigger right column on larger screens */
-@media (min-width: 1200px){
-  .cv-section{ grid-template-columns: 360px minmax(0,1fr); gap: 72px; }
+/* Chevron placement */
+.chevron {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
 }
-
-/* stack nicely on mobile */
-@media (max-width: 900px){
-  .cv-section{ grid-template-columns: 1fr; gap: 22px; }
-  .cv-title{ padding-left: 0; }
+.cv-accordion.active .chevron {
+  transform: rotate(180deg);
 }
 
 
