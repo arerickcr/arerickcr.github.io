@@ -726,3 +726,73 @@ body.dark .theme-toggle .moon {
   }
 }
 
+/* ===== CV two-column layout: more room on the right ===== */
+.cv-section{
+  /* title column ~320px, content takes the rest */
+  grid-template-columns: 320px minmax(0,1fr);
+  gap: 64px;                 /* more space between left title and content */
+}
+
+/* right column spacing (scope only the page column, not the icon span) */
+.cv-section .cv-right{
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;             /* space between rows */
+}
+
+/* accordion row: full width, left aligned, roomy */
+.cv-accordion{
+  width: 100%;
+  padding: 22px 0;           /* more vertical room */
+  border-top: 1px solid var(--border);
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr auto;  /* title | chevron */
+  align-items: center;
+  text-align: left;          /* ensure no centering */
+}
+
+/* institution name – align with panel box */
+.cv-title{
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding-left: 8px;         /* matches the panel’s inner radius/edge */
+}
+
+/* chevron on the far right (scope to button, not the page column) */
+.cv-accordion .cv-right{
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* panel box: more padding + same left edge as title */
+.cv-panel{
+  margin: 6px 0 22px 0;
+  padding: 16px 20px;        /* roomier box */
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: left;
+  line-height: 1.75;
+}
+
+/* paragraphs inside panel */
+.cv-panel p{ margin: .6rem 0; }
+.cv-panel p.location{ margin-top: 1.2rem; }
+.cv-panel p.dates{ margin-top: .4rem; }
+
+/* bigger right column on larger screens */
+@media (min-width: 1200px){
+  .cv-section{ grid-template-columns: 360px minmax(0,1fr); gap: 72px; }
+}
+
+/* stack nicely on mobile */
+@media (max-width: 900px){
+  .cv-section{ grid-template-columns: 1fr; gap: 22px; }
+  .cv-title{ padding-left: 0; }
+}
+
+
