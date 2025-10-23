@@ -23,12 +23,35 @@ toggle.addEventListener('click', () => {
 });
 
 
-// Accordions
-const accordions = document.querySelectorAll('.accordion');
-accordions.forEach(btn => {
+// Accordions (allow one open per section)
+document.querySelectorAll('.cv').forEach(section => {
+  const rows = section.querySelectorAll('.cv-accordion');
+  rows.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const open = panel.style.display === 'block';
+
+      // close all rows in this section
+      rows.forEach(b => {
+        b.classList.remove('active');
+        const p = b.nextElementSibling;
+        if (p) p.style.display = 'none';
+      });
+
+      // open the clicked one (if it was closed)
+      if (!open) {
+        btn.classList.add('active');
+        panel.style.display = 'block';
+      }
+    });
+  });
+});
+
+// keep the old generic accordions working (Education etc.)
+document.querySelectorAll('.accordion:not(.cv-accordion)').forEach(btn => {
   btn.addEventListener('click', () => {
     const panel = btn.nextElementSibling;
-    const isOpen = panel.style.display === 'block';
-    panel.style.display = isOpen ? 'none' : 'block';
+    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    btn.classList.toggle('active');
   });
 });
