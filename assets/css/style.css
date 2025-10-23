@@ -389,8 +389,8 @@ p {
   justify-self: end;
 }
 .cv-logo {
-  width: 54px; height: 54px; object-fit: contain;
-  border-radius: 50%;
+  width: 60px; height: 60px; object-fit: contain;
+  border-radius: 65%;
 }
 .chevron {
   font-size: 1.2rem;
@@ -783,6 +783,69 @@ body.dark .theme-toggle .moon {
 }
 .cv-accordion.active .chevron {
   transform: rotate(180deg);
+}
+
+/* === CV: align the whole right column to the page's right edge === */
+.cv-section {
+  /* left title column, big flexible right column */
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 60px;
+}
+
+/* Right column should NOT center its children */
+.cv-section .cv-right {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;      /* <-- no centering; take full width */
+  width: 100%;
+}
+
+/* Each row fills the whole right column width */
+.cv-section .cv-right > .cv-row { width: 100%; }
+
+/* Button + panel should span the full width (no 90% boxes) */
+.cv-accordion,
+.cv-panel {
+  width: 100%;
+  max-width: none;
+}
+
+/* Tidy accordion button */
+.cv-accordion {
+  border: none;                      /* remove default button border */
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;   /* title | chevron */
+  align-items: center;
+  background: transparent;
+  text-align: left;
+}
+
+/* Title on ONE line; if it overflows, show an ellipsis */
+.cv-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  white-space: nowrap;               /* <-- one line */
+  overflow: hidden;
+  text-overflow: ellipsis;           /* … if too long */
+}
+
+/* Panel breathing room */
+.cv-panel {
+  margin: 6px 0 24px 0;
+  padding: 16px 22px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  line-height: 1.75;
+  text-align: left;
+}
+
+/* Mobile: stack cleanly */
+@media (max-width: 900px) {
+  .cv-section { grid-template-columns: 1fr; gap: 22px; }
 }
 
 
