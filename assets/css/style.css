@@ -402,11 +402,33 @@ p {
 .cv-accordion.active .chevron { transform: rotate(180deg); }
 
 /* Panel content */
+/* ===== Professional Experience panel alignment ===== */
 .cv-panel {
-  padding: 18px 8px 24px 8px;
-  background: var(--panel);
+  padding: 14px 18px 18px 18px;
   border-bottom: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 8px;
+  text-align: left;              /* ← ensures all text is aligned */
+  line-height: 1.7;
 }
+
+/* Paragraph styling inside panel */
+.cv-panel p {
+  margin: 0.5rem 0;              /* adds nice spacing */
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+
+/* Add blank line before location/dates */
+.cv-panel p.location {
+  margin-top: 1.2rem;            /* ← extra space before location */
+  font-style: normal;
+}
+.cv-panel p.dates {
+  margin-top: 0.4rem;            /* small separation below */
+  font-weight: 500;
+}
+
 .cv-bullets {
   list-style: none;           /* ⬅ removes dots */
   margin: 0;
