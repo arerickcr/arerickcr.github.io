@@ -337,6 +337,85 @@ p {
   font-size: 1rem;
 }
 
+/* ===== CV page ===== */
+.cv-heading {
+  font-size: 2.1rem;
+  letter-spacing: 0.07em;
+  margin: 28px 0 10px;
+}
+
+.cv-row + .cv-row { margin-top: 4px; }
+
+/* Row button (accordion trigger) */
+.cv-accordion {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  padding: 22px 8px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr auto;  /* title | meta | right */
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.cv-accordion:hover { background: var(--panel); }
+
+.cv-title {
+  font-size: 1.6rem;         /* big line like your screenshot */
+  font-weight: 700;
+}
+
+.cv-meta {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* right side: logo + chevron */
+.cv-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: end;
+}
+.cv-logo {
+  width: 54px; height: 54px; object-fit: contain;
+  border-radius: 50%;
+}
+.chevron {
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+
+/* opened state (JS will toggle .active) */
+.cv-accordion.active .chevron { transform: rotate(180deg); }
+
+/* Panel content */
+.cv-panel {
+  padding: 18px 8px 24px 8px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.cv-bullets { margin: 0; padding-left: 18px; }
+.cv-bullets li { margin: 8px 0; line-height: 1.7; }
+
+.cv-download {
+  text-align: center;
+  margin: 28px 0 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cv-accordion {
+    grid-template-columns: 1fr auto; /* stack meta inside panel on small screens */
+    padding: 18px 6px;
+  }
+  .cv-meta { display: none; }
+}
+
+
 /* ====== Logo Grid ====== */
 .logo-grid {
   display: grid;
