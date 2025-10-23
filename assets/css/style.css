@@ -433,6 +433,97 @@ p {
   .cv-meta { display: none; }
 }
 
+/* ===== Two-column CV section ===== */
+.cv-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;  /* title left, content right */
+  gap: 50px;
+  align-items: start;
+  margin: 60px 0;
+}
+
+.cv-left {
+  text-align: left;
+  padding-right: 20px;
+}
+
+.cv-left h2 {
+  font-size: 2.8rem;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.cv-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Adjust accordion design */
+.cv-accordion {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border);
+  padding: 18px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cv-accordion:hover { background: var(--panel); }
+
+.cv-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+
+.cv-panel {
+  padding: 10px 10px 18px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.cv-panel p {
+  margin: 6px 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+
+.cv-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+.cv-bullets li {
+  margin: 4px 0;
+}
+
+/* Chevron */
+.chevron {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+.cv-accordion.active .chevron {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cv-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cv-left h2 {
+    text-align: center;
+  }
+}
+
+
 /* ===== Awards & Recognitions ===== */
 .awards-list {
   display: flex;
