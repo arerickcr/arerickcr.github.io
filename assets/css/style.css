@@ -433,6 +433,49 @@ p {
   .cv-meta { display: none; }
 }
 
+/* ===== Awards & Recognitions ===== */
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.award {
+  display: grid;
+  grid-template-columns: 1fr 100px;  /* left = title, right = year */
+  align-items: baseline;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.award-title {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.award-year {
+  font-size: 1.05rem;
+  text-align: right;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 700px) {
+  .award {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+  .award-year {
+    text-align: left;
+    color: var(--muted);
+  }
+}
+
 
 /* ====== Logo Grid ====== */
 .logo-grid {
