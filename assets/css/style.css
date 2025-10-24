@@ -858,5 +858,61 @@ body.dark .theme-toggle .moon {
   font-weight: 700;
 }
 
+/* ===== Skills & Interests Section (Refined) ===== */
+.cv-section {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  align-items: flex-start;
+  gap: 60px;
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+.cv-left h2 {
+  margin: 0;
+  font-size: 2rem;              /* smaller, matches "Professional Experience" */
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 6px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+
+.skill-item p {
+  margin: 0;
+  font-variant-caps: small-caps;
+}
+
+.skill-item strong {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.skills hr {
+  border: none;
+  border-top: 1px solid var(--text);
+  opacity: 0.5;
+  margin: 10px 0;
+}
+
+/* Responsive balance */
+@media (max-width: 900px) {
+  .cv-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cv-left h2 {
+    text-align: left;
+  }
+}
+
 
 
