@@ -1,4 +1,4 @@
-# GitHub Pages Starter (Erick)
+# GitHub Pages Starter
 
 A minimalist academic/industry portfolio starter you can deploy on **GitHub Pages** with:
 - ✅ Light/Dark mode toggle (persists preference, honors system default)
