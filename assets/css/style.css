@@ -339,7 +339,7 @@ p {
 
 /* ===== CV page ===== */
 .cv-heading {
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   letter-spacing: 0.07em;
   margin: 28px 0 10px;
 }
@@ -470,7 +470,7 @@ p {
 }
 
 .cv-left h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   letter-spacing: 0.08em;
   line-height: 1.1;
   margin: 0;
@@ -850,7 +850,7 @@ body.dark .theme-toggle .moon {
 
 /* ===== Smaller left section title (Professional Experience) ===== */
 .cv-left h2 {
-  font-size: 2.1rem;        /* smaller, elegant size */
+  font-size: 2.5rem;        /* smaller, elegant size */
   letter-spacing: 0.06em;   /* keep the small-caps spacing */
   line-height: 1.2;
   margin: 0 0 1rem 0;
@@ -870,7 +870,7 @@ body.dark .theme-toggle .moon {
 
 .cv-left h2 {
   margin: 0;
-  font-size: 2rem;              /* smaller, matches "Professional Experience" */
+  font-size: 2.5rem;              /* smaller, matches "Professional Experience" */
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.07em;
@@ -918,9 +918,9 @@ body.dark .theme-toggle .moon {
 .cv-left h2,
 .education h2,
 .experience h2,
-.awards h2,
+.awards-list h2,
 .skills h2 {
-  font-size: 3rem;             /* uniform size */
+  font-size: 2.5rem;             /* uniform size */
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.07em;
