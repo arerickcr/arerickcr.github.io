@@ -920,7 +920,7 @@ body.dark .theme-toggle .moon {
 .experience h2,
 .awards h2,
 .skills h2 {
-  font-size: 2rem;             /* uniform size */
+  font-size: 3rem;             /* uniform size */
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.07em;
