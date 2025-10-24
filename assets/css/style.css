@@ -914,5 +914,20 @@ body.dark .theme-toggle .moon {
   }
 }
 
+/* ===== Unified CV Section Titles ===== */
+.cv-left h2,
+.education h2,
+.experience h2,
+.awards h2,
+.skills h2 {
+  font-size: 2rem;             /* uniform size */
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+  margin: 0;
+  text-transform: none;
+  font-variant-caps: small-caps;
+}
+
 
 
