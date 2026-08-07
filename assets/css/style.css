@@ -320,13 +320,13 @@ p {
 }
 
 /* Centered italic blurb */
-.notes-blurb {
+/* .notes-blurb {
   text-align: center;
   margin: 36px auto 8px;
   font-style: italic;
   letter-spacing: 0.04em;
   opacity: 0.9;
-}
+} */
 
 /* Responsive: stack columns on smaller screens */
 @media (max-width: 1000px) {
