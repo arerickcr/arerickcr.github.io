@@ -24,10 +24,23 @@ body.dark {
 
 /* ====== Global Serif + Small-Caps Typography ====== */
 html { font-size: 18.5px; }
-@media (min-width: 900px) {
-  html { font-size: 19.5px; }
-}
+@media (max-width: 700px) {
 
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-text {
+    width: 100%;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    letter-spacing: 0.02em;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
 body,
 button, input, select, textarea,
 a, nav, .accordion, .panel,
