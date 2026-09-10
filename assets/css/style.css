@@ -344,12 +344,27 @@ p {
   background: white;
 }
 
+.project-media--schwinger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: white;
+}
+
 .project-media--schwinger img {
-  width: 86%;
-  height: 86%;
-  object-fit: contain;
-  object-position: center;
   display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin: auto;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
 }
 
 /* Text inside the card */
