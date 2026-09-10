@@ -337,6 +337,19 @@ p {
     from being cropped.
   */
   object-fit: contain;
+  object-position: center;
+}
+
+.project-media--schwinger {
+  background: white;
+}
+
+.project-media--schwinger img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 /* Text inside the card */
