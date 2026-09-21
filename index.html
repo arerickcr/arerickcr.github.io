@@ -1,92 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Numerical research and scientific computing — Erick Arguello Cruz</title>
-  <meta name="description" content="Erick Arguello Cruz, physics PhD student at Carnegie Mellon University. Numerical methods, tensor networks, spectral statistics, and scientific computing.">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erick Arguello Cruz</title>
+  <meta name="description" content="Portfolio." />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="portfolio-refresh">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="container header-inner">
-    <a class="site-title" href="index.html">Erick Arguello Cruz</a>
-    <nav class="site-nav" aria-label="Main navigation"><a href="pages/projects.html">Projects</a><a href="pages/publications.html">Publications</a><a href="pages/notes.html">Notes</a><a href="pages/cv.html">CV</a></nav>
-  </div></header>
-  <main id="main" class="container portfolio-main">
-<section class="research-hero" aria-labelledby="intro-title">
-  <div>
-    <p class="eyebrow">Carnegie Mellon University · Physics PhD student</p>
-    <h1 id="intro-title">Mathematical models.<br>Computational experiments.</h1>
-    <p class="intro">I study quantum critical phenomena using tensor networks, spectral methods, and numerical simulation, with <a href="https://www.cmu.edu/physics/people/faculty/tarnopolsky.html">Grigory Tarnopolsky</a> at CMU.</p>
-    <p>I am interested in quantitative research and high-performance scientific computing: problems where mathematical reasoning and careful numerical validation lead to useful results.</p>
-    <p class="action-links"><a class="primary-link" href="pages/projects.html">Explore selected work</a><a href="pages/cv.html">View CV</a><a href="mailto:earguell@andrew.cmu.edu">Contact</a></p>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Erick Arguello Cruz</h1>
+      <nav class="site-nav">
+        <a href="pages/publications.html">Publications</a>
+        <a href="pages/projects.html">Projects</a>
+        <a href="pages/notes.html">Notes</a>
+        <a href="pages/cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <p>I’m an ecuadorian theoretical physics PhD student at <a href="https://www.cmu.edu" target="_blank" rel="noopener">Carnegie Mellon University (CMU)</a>, under the supervision of  
+          <a href="https://www.cmu.edu/physics/people/faculty/tarnopolsky.html" target="_blank" rel="noopener">Prof. Grigory Tarnopolsky</a>. My research focuses on the bridge between theoretical and numerical studies of 
+          critical phenomena and its various realizations. I also enjoy applying advanced mathematics, simulation, and data analysis to real‑world problems.
+          </p>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/images/Picture.jpg" alt="Profile photo placeholder" />
+      </div>
+    </section>
+
+    <section>
+      <!-- ===== About Me ===== -->
+   <section id="about" class="section-narrow container">
+  <h2 class="about-title">About me</h2>
+
+  <p>
+    I obtained my Bachelors in Mathematics and Physics at
+    <a href="https://www.usfq.edu.ec/en" target="_blank" rel="noopener">
+      Universidad San Francisco de Quito (USFQ)
+    </a>,
+    where I gained experience in experimental condensed matter physics, theoretical high energy physics,
+    and computer science fundamentals. After graduation, I worked as a full-time Teaching Assistant
+    in the Math and Physics department at USFQ where I leveraged my learning and communication skills
+    in technical concepts.
+  </p>
+
+  <p>
+    A year and a half later, I went to the
+    <a href="https://www.ictp.it/" target="_blank" rel="noopener">
+      International Centre of Theoretical Physics (ICTP)
+    </a>
+    to study the Postgraduate Diploma Programme before pursuing my doctorate dream in Pittsburgh, at CMU,
+    the perfect place to do both Machine Learning and Physics with leading experts in the fields.
+  </p>
+</section>
+
+
+  <footer class="site-footer">
+  <div class="container footer-icons">
+    <a href="mailto:earguell@andrew.cmu.edu" title="Email">
+      <img src="../assets/images/email.jpg" alt="Email icon" />
+    </a>
+    <a href="https://www.linkedin.com/in/erick-arguello-c/" target="_blank" title="LinkedIn">
+      <img src="../assets/images/linkedin.jpg" alt="LinkedIn" />
+    </a>
+    <a href="https://scholar.google.com/citations?user=H8EPkaoAAAAJ&hl=en" target="_blank" title="Google Scholar">
+      <img src="../assets/images/google.png" alt="Google Scholar" />
+    </a>
+    <a href="https://inspirehep.net/authors/2102694?ui-citation-summary=true" target="_blank" title="InspireHEP">
+      <img src="../assets/images/inspire.jpg" alt="InspireHEP" />
+    </a>
+    <a href="https://orcid.org/0000-0002-2440-0047" target="_blank" title="ORCID">
+      <img src="../assets/images/orcid.png" alt="ORCID" />
+    </a>
+    <a href="https://github.com/arerickcr" target="_blank" title="GitHub">
+      <img src="../assets/images/github.png" alt="GitHub" />
+    </a>
   </div>
-  <figure class="portrait"><img src="assets/images/Picture.jpg" alt="Erick Arguello Cruz" width="300" height="360"></figure>
-</section>
-
-<section class="selected-work" aria-labelledby="work-title">
-  <div class="section-heading"><h2 id="work-title">Selected computational work</h2><a href="pages/projects.html">All projects →</a></div>
-  <div class="feature-grid">
-    <article class="feature-card">
-      <p class="eyebrow">Numerical quantum field theory</p>
-      <h3><a href="pages/projects.html#schwinger">Precision lattice calculations</a></h3>
-      <p>Locating a quantum critical point with tensor-network simulations and independent numerical criteria.</p>
-      <p class="result-line">Published study: up to 3,000 qubits; four criticality checks.</p>
-      <p class="tools-line">Julia · ITensors · DMRG</p>
-      <a href="https://github.com/arerickcr/Schwinger-Model">Code and reproduction →</a>
-    </article>
-    <article class="feature-card">
-      <p class="eyebrow">Spectral statistics and covariance</p>
-      <h3><a href="pages/projects.html#random-matrices">Structure and sampling noise</a></h3>
-      <p>Random-matrix experiments linking analytic spectral laws to finite samples and financial correlations.</p>
-      <p class="result-line">Offline example: 1,920 eigenvalues checked against an analytic reference.</p>
-      <p class="tools-line">Python · NumPy · Statistical analysis</p>
-      <a href="https://github.com/arerickcr/Random-Matrices">Results and notebooks →</a>
-    </article>
-    <article class="feature-card">
-      <p class="eyebrow">Scientific computing</p>
-      <h3><a href="pages/projects.html#tensor-networks">Quantum lattice models</a></h3>
-      <p>Low-energy spectra, symmetries, and excited states in Ising, Hubbard, and Yang–Lee models.</p>
-      <p class="result-line">A 20-site Ising example exposes energies and state-overlap diagnostics.</p>
-      <p class="tools-line">Julia · Matrix product states · Eigensolvers</p>
-      <a href="https://github.com/arerickcr/Tensor-Networks">Methods and examples →</a>
-    </article>
+  <div class="container">
+    <p>© <span id="year"></span> Erick Arguello Cruz</p>
   </div>
-</section>
+</footer>
 
-<section class="research-summary" aria-labelledby="research-title">
-  <h2 id="research-title">Research and publications</h2>
-  <p>My coauthored work spans the massive Schwinger model, Yang–Lee quantum criticality, and the Sachdev–Ye–Kitaev model. I connect theoretical predictions with numerical calculations, with particular interest in precision, finite-size effects, and spectral structure.</p>
-  <ul class="publication-selection">
-    <li><a href="https://arxiv.org/abs/2412.01902">Precision study of the massive Schwinger model near quantum criticality</a><span>DMRG, critical-mass estimation, and cross-validation between physical criteria.</span></li>
-    <li><a href="https://arxiv.org/abs/2505.06369">Yang–Lee Quantum Criticality in Various Dimensions</a><span>Non-Hermitian spectra and comparison with conformal predictions.</span></li>
-    <li><a href="https://arxiv.org/abs/2206.13547">Precise low-temperature expansions for the Sachdev–Ye–Kitaev model</a><span>Low-temperature behavior in an interacting many-body model.</span></li>
-  </ul>
-  <a href="pages/publications.html">Full publication list →</a>
-</section>
 
-<section class="about-summary" aria-labelledby="about-title">
-  <h2 id="about-title">Background</h2>
-  <p>I am from Ecuador and hold bachelor's degrees in mathematics and physics from <a href="https://www.usfq.edu.ec/en">Universidad San Francisco de Quito</a>. Before joining CMU, I completed the <a href="https://www.ictp.it/">ICTP</a> Postgraduate Diploma Programme and received the 2021 Best Performing Diploma Student Award in the HECAP section.</p>
-  <p>My background also includes experimental condensed matter physics and teaching mathematics and physics. I enjoy explaining technical ideas and working across disciplines.</p>
-  <p><a href="pages/notes.html">Technical notes</a> · <a href="pages/cv.html">Research and teaching experience</a></p>
-</section>
-</main>
-  <footer class="site-footer"><div class="container">
-    <p class="footer-links"><a href="mailto:earguell@andrew.cmu.edu">Email</a>
-    <a href="https://github.com/arerickcr">GitHub</a>
-    <a href="https://www.linkedin.com/in/erick-arguello-c/">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=H8EPkaoAAAAJ&amp;hl=en">Google Scholar</a>
-    <a href="https://orcid.org/0000-0002-2440-0047">ORCID</a>
-    <a href="https://inspirehep.net/authors/2102694?ui-citation-summary=true">INSPIRE</a></p>
-    <p class="muted">© <span id="year"></span> Erick Arguello Cruz · Pittsburgh, Pennsylvania</p>
-  </div></footer>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode">
-    <img src="assets/icons/moon.png" alt="" class="icon sun">
-    <img src="assets/icons/sun.png" alt="" class="icon moon">
-  </button>
+  <!-- Theme toggle -->
+ <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+  <img src="assets/icons/moon.png" alt="Light mode icon" class="icon sun">
+  <img src="assets/icons/sun.png" alt="Dark mode icon" class="icon moon">
+</button>
+
+
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
