@@ -2,272 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Erick Arguello Cruz</title>
+  <meta name="description" content="Selected research projects: precision lattice calculations, random matrices, and tensor-network simulations.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/portfolio.css">
 </head>
-<body>
-  <header class="site-header">
-  <div class="container header-inner">
-    <h1 class="site-title">
-      <a href="../index.html" style="text-decoration:none;color:inherit">Erick Arguello Cruz</a>
-    </h1>
-    <nav class="site-nav">
-      <a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a>
-      <a href="notes.html">Notes</a>
-      <a href="cv.html">CV</a>
-    </nav>
-  </div>
-</header>
-  
-<main class="projects-page">
+<body class="portfolio-refresh">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="site-title" href="../index.html">Erick Arguello Cruz</a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="projects.html" aria-current="page">Projects</a><a href="publications.html">Publications</a><a href="notes.html">Notes</a><a href="cv.html">CV</a></nav>
+  </div></header>
+  <main id="main" class="container portfolio-main">
+<div class="page-intro"><p class="eyebrow">Research and scientific software</p><h1>Selected projects</h1>
+<p>Each project connects a research question to a result, a computational entry point, and the checks needed to interpret it. Published findings and public example code are identified separately.</p></div>
 
-  <section class="projects-section" aria-labelledby="projects-heading">
+<article class="case-study" id="schwinger">
+  <p class="eyebrow">Julia · ITensors · DMRG</p><h2>Precision calculations in the Schwinger model</h2>
+  <dl class="case-details">
+    <dt>1. Problem</dt><dd>Locate a quantum critical point despite finite-size effects and tensor-network truncation errors.</dd>
+    <dt>2. Result</dt><dd>The related coauthored study reports systems up to 3,000 qubits, a critical mass determined to five digits, and agreement among four criticality criteria. These are classical simulations using compressed states. <a href="https://arxiv.org/abs/2412.01902">Read the paper</a>.</dd>
+    <dt>3. Reproduce</dt><dd>Start with the repository's eight-site open-boundary calculation. The <a href="https://github.com/arerickcr/Schwinger-Model#3-reproduce">README gives setup commands and expected output</a>; the public examples do not reproduce every large-system result.</dd>
+    <dt>4. Validation</dt><dd>Inspect state overlaps, check small systems against reference solutions, and establish convergence with sweep count and bond dimension before finite-size extrapolation.</dd>
+    <dt>5. Methods</dt><dd>Staggered fermions, Jordan–Wigner mapping, matrix product states, and DMRG. <a href="../assets/pdfs/Schwinger_Model_Notes.pdf">Open-boundary notes</a> · <a href="../assets/pdfs/Schwinger_Model_in_a_Circle.pdf">Periodic-boundary notes</a>.</dd>
+  </dl>
+</article>
 
-<h2 id="projects-heading">Projects</h2> 
+<article class="case-study" id="random-matrices">
+  <p class="eyebrow">Python · NumPy · Spectral statistics</p><h2>Random matrices and covariance structure</h2>
+  <dl class="case-details">
+    <dt>1. Problem</dt><dd>Distinguish finite-sample noise from collective structure in matrix spectra, including empirical financial correlations.</dd>
+    <dt>2. Result</dt><dd>A small offline example samples 1,920 GOE eigenvalues; the mean squared eigenvalue is 1.0202 against a finite-size expectation of 1.0125. The saved finance notebook separately identifies five candidate spectral outliers in a 48-asset, 100-observation window.</dd>
+    <dt>3. Reproduce</dt><dd>The <a href="https://github.com/arerickcr/Random-Matrices#3-reproduce">offline quickstart</a> runs without market-data access and records its seed, software versions, and numerical diagnostics.</dd>
+    <dt>4. Validation</dt><dd>The quickstart checks symmetry and eigenpair residuals. Financial outliers are exploratory observations; the repository does not claim out-of-sample forecasting or trading performance.</dd>
+    <dt>5. Methods</dt><dd>GOE/GUE ensembles, semicircle and Marchenko–Pastur reference laws, covariance eigendecomposition, and spectral statistics. <a href="https://github.com/arerickcr/Random-Matrices">Notebooks and references</a>.</dd>
+  </dl>
+  <figure class="result-figure"><img src="../assets/images/random-matrix-quickstart.png" alt="Histogram of GOE eigenvalues with the limiting semicircle density; finite-size fluctuations remain visible" width="1296" height="792" loading="lazy"><figcaption>Seeded offline example: 24 matrices of size 80. The analytic curve is an asymptotic reference.</figcaption></figure>
+</article>
 
-    <!-- <p class="projects-intro">
-      Selected computational projects in quantum physics, numerical methods,
-      and data science.
-    </p> -->
+<article class="case-study" id="tensor-networks">
+  <p class="eyebrow">Julia · Tensor networks · Numerical linear algebra</p><h2>Low-energy spectra of quantum lattice models</h2>
+  <dl class="case-details">
+    <dt>1. Problem</dt><dd>Compute low-energy states while controlling the exponential growth of a quantum system's Hilbert space.</dd>
+    <dt>2. Result</dt><dd>The 20-site Ising example computes five low-energy states and reports energies, symmetry expectations, normalization, and pairwise overlaps. Related <a href="https://arxiv.org/abs/2505.06369">Yang–Lee research</a> compares spectra with conformal predictions in several dimensions.</dd>
+    <dt>3. Reproduce</dt><dd>Use the <a href="https://github.com/arerickcr/Tensor-Networks#3-reproduce">Ising example and setup instructions</a> as the entry point; additional Hubbard and Yang–Lee files are research examples.</dd>
+    <dt>4. Validation</dt><dd>State diagnostics and convergence checks support interpretation. Non-Hermitian problems require separate treatment of left and right eigenvectors. No hardware speedup is claimed.</dd>
+    <dt>5. Methods</dt><dd>Matrix product states and operators, DMRG, conserved sectors, and excited-state penalties using ITensorMPS. <a href="https://github.com/arerickcr/Tensor-Networks">Code and model notes</a>.</dd>
+  </dl>
+</article>
 
-    <div class="projects-grid"> 
-
-      <!-- Project 1 -->
-      <article class="project-card">
-
-        <div class="project-media--schwinger">
-          <img
-            src="../assets/images/universality.png"
-            alt="Comparison of random-matrix eigenvalue distributions"
-            loading="lazy"
-            width="1200"
-            height="750"
-          >
-        </div>
-
-        <div class="project-body">
-          <h3 class="project-title">
-            Random Matrix Theory and Applications
-          </h3>
-
-          <p class="project-description">
-            A numerical study of eigenvalue densities, level-spacing
-            statistics and covariance matrices, emphasizing
-            applications to machine learning, quantitative
-            finance, and the SYK model.
-          </p>
-
-          <p class="project-tools">
-            Python · NumPy · SciPy · Matplotlib
-          </p>
-
-          <div class="project-links">
-            <a href="https://github.com/arerickcr/Random-Matrices" target="_blank" rel="noopener">
-              GitHub
-            </a>
-
-            <!-- <a href="../assets/pdfs/random_matrices_project.pdf"
-               target="_blank" rel="noopener">
-              Project notes
-            </a> -->
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- Project 2 -->
-      <article class="project-card">
-
-        <div class="project-media--schwinger">
-          <img
-            src="../assets/images/Schwinger_chain_circle-1.png"
-            alt="Schwinger model chain"
-            loading="lazy"
-            width="1200"
-            height="750"
-          >
-        </div>
-
-        <div class="project-body">
-          <h3 class="project-title">
-            Schwinger model near criticality
-          </h3>
-
-          <p class="project-description">
-            DMRG and matrix-product-state implementations for the Schwinger
-            model for various boundary conditions,
-            and finite-size scaling near quantum critical points.
-          </p>
-
-          <p class="project-tools">
-            Julia · ITensors.jl · MATLAB · HPC
-          </p>
-
-          <div class="project-links">
-            <a href="https://github.com/arerickcr/Schwinger-Model" target="_blank" rel="noopener">
-              GitHub
-            </a>
-            <a href="../assets/pdfs/Schwinger_Model_Notes.pdf"
-               target="_blank" rel="noopener">
-              OBC Notes
-            </a> 
-            <a href="../assets/pdfs/Schwinger_Model_in_a_Circle.pdf"
-               target="_blank" rel="noopener">
-              PBC Notes
-            </a> 
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- Project 3 -->
-      <article class="project-card">
-
-        <div class="project-media--schwinger">
-          <img
-            src="../assets/images/phase_diagr-1.png"
-            alt="Yang-Lee quantum criticality"
-            loading="lazy"
-            width="1200"
-            height="750"
-          >
-        </div>
-
-        <div class="project-body">
-          <h3 class="project-title">
-            Yang-Lee quantum criticality 
-          </h3>
-
-          <p class="project-description">
-            Study of the simplest non-unitary CFT across various dimensions and several other
-            quantum models that share the same Yang-Lee universality class. 
-          </p>
-
-          <p class="project-tools">
-            Julia · ITensors.jl · MATLAB · HPC · ED
-          </p>
-
-          <div class="project-links">
-            <a href="https://github.com/arerickcr/Tensor-Networks" target="_blank" rel="noopener">
-              GitHub
-            </a>
-          </div>
-        </div>
-
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project-card">
-
-        <div class="project-media--syk">
-          <img
-            src="../assets/images/complete-graph-k20.png"
-            alt="SYK_4pt"
-            loading="lazy"
-            width="1200"
-            height="750"
-          >
-        </div>
-
-        <div class="project-body">
-          <h3 class="project-title">
-            SYK model  
-          </h3>
-
-          <p class="project-description">
-            Thermal and conformal features of the Majorana and complex Sachdev-Ye-Kitaev model. 
-          </p>
-
-          <p class="project-tools">
-            Mathematica · HPC
-          </p>
-
-          <div class="project-links">
-            <a href="../assets/pdfs/SYK_Comments.pdf"
-               target="_blank" rel="noopener">
-              SYK Notes
-            </a> 
-            <a href="../assets/pdfs/Complex_SYK_Comments.pdf"
-               target="_blank" rel="noopener">
-              cSYK Notes
-            </a> 
-          </div>
-        </div>
-
-      </article>
-
-      <!-- Project 5 -->
-      <article class="project-card">
-
-        <div class="project-media--schwinger">
-          <img
-            src="../assets/images/MR_compare.png"
-            alt="Magnetoresistance"
-            loading="lazy"
-            width="1200"
-            height="750"
-          >
-        </div>
-
-        <div class="project-body">
-          <h3 class="project-title">
-            Magnetotransport properties of Nickel nanoparticles on Graphene  
-          </h3>
-
-          <p class="project-description">
-            A experimental study on how the transport properties of Ni nanoparticles on graphene samples change
-            in comparison to the ones of single layer graphene buffers.
-          </p>
-
-          <p class="project-tools">
-            Instrumentation · Data Analysis 
-          </p>
-
-        </div>
-
-      </article>
-
-      
-      
-    </div>
-  </section>
-
-<footer class="site-footer">
-  <div class="container footer-icons">
-    <a href="mailto:earguell@andrew.cmu.edu" title="Email">
-      <img src="../assets/images/email.jpg" alt="Email icon" />
-    </a>
-    <a href="https://www.linkedin.com/in/erick-arguello-c/" target="_blank" title="LinkedIn">
-      <img src="../assets/images/linkedin.jpg" alt="LinkedIn" />
-    </a>
-    <a href="https://scholar.google.com/citations?user=H8EPkaoAAAAJ&hl=en" target="_blank" title="Google Scholar">
-      <img src="../assets/images/google.png" alt="Google Scholar" />
-    </a>
-    <a href="https://inspirehep.net/authors/2102694?ui-citation-summary=true" target="_blank" title="InspireHEP">
-      <img src="../assets/images/inspire.jpg" alt="InspireHEP" />
-    </a>
-    <a href="https://orcid.org/0000-0002-2440-0047" target="_blank" title="ORCID">
-      <img src="../assets/images/orcid.png" alt="ORCID" />
-    </a>
-    <a href="https://github.com/arerickcr" target="_blank" title="GitHub">
-      <img src="../assets/images/github.png" alt="GitHub" />
-    </a>
-  </div>
-  <div class="container">
-    <p>© <span id="year"></span> Erick Arguello Cruz</p>
-  </div>
-</footer>
-  
- <!-- Theme toggle -->
- <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
-  <img src="../assets/icons/moon.png" alt="Light mode icon" class="icon sun">
-  <img src="../assets/icons/sun.png" alt="Dark mode icon" class="icon moon">
-</button>
-    
+<section class="research-summary" aria-labelledby="other-research"><h2 id="other-research">Further research</h2>
+  <h3>Sachdev–Ye–Kitaev models</h3><p>Thermal and conformal properties of Majorana and complex SYK models. <a href="../assets/pdfs/SYK_Comments.pdf">SYK notes</a> · <a href="../assets/pdfs/Complex_SYK_Comments.pdf">Complex SYK notes</a> · <a href="publications.html">Publications</a>.</p>
+  <h3>Magnetotransport in nanoparticle-decorated graphene</h3><p>Experimental work examining how nickel nanoparticles affect graphene transport properties. <a href="https://www.mdpi.com/2079-4991/13/12/1861">Published study</a>.</p>
+  <p class="muted">Supporting coursework: <a href="https://github.com/arerickcr/ML-Foundations">Machine Learning Foundations</a>.</p>
+</section>
+</main>
+  <footer class="site-footer"><div class="container">
+    <p class="footer-links"><a href="mailto:earguell@andrew.cmu.edu">Email</a>
+    <a href="https://github.com/arerickcr">GitHub</a>
+    <a href="https://www.linkedin.com/in/erick-arguello-c/">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=H8EPkaoAAAAJ&amp;hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-2440-0047">ORCID</a>
+    <a href="https://inspirehep.net/authors/2102694?ui-citation-summary=true">INSPIRE</a></p>
+    <p class="muted">© <span id="year"></span> Erick Arguello Cruz · Pittsburgh, Pennsylvania</p>
+  </div></footer>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode">
+    <img src="../assets/icons/moon.png" alt="" class="icon sun">
+    <img src="../assets/icons/sun.png" alt="" class="icon moon">
+  </button>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
